@@ -7,9 +7,30 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "BauhausRegular";
+  src: url("/fonts/BauhausRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InterVariable";
+  src: url("/fonts/InterVariable.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSansThai-Light";
+  src: url("/fonts/IBMPlexSansThai-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -18,4 +39,93 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ปรับขนาดของ scrollbar */
+.scrollable-container::-webkit-scrollbar {
+  width: 6px; /* ความกว้างของ scrollbar */
+  height: 5px; /* ความสูงของ scrollbar ในแนวนอน */
+}
+
+/* ปรับสีของ track */
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* ปรับสีของ thumb (ที่เลื่อนได้) */
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: #d1cfcf;
+  border-radius: 10px;
+}
+
+/* เมื่อ hover ที่ scrollbar thumb */
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #8d8989;
+}
+
+/* popup-overlay.css */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute; /* Position it absolutely within the parent */
+  top: 10px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  background: none; /* No background */
+  border: none; /* Remove the default border */
+  color: rgb(0, 0, 0); /* White color for the button text */
+  font-size: 20px; /* Adjust font size for better visibility */
+  font-weight: bold; /* Bold text for visibility */
+  z-index: 40; /* Ensure it's above other elements */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+.scan-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 60%;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  z-index: 35;
+}
+
+.center-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* ความยาวของเส้น */
+  height: 1px; /* ความกว้างของเส้น */
+  background-color: rgb(255, 0, 0); /* สีเส้น */
+  transform: translate(-50%, -50%); /* ทำให้เส้นอยู่กลาง */
+  z-index: 36;
+}
+
+.colorbg {
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
 }
