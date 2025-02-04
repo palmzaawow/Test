@@ -111,7 +111,10 @@ export default function POS() {
         try {
           // List all video input devices (cameras)
           const devices = await codeReader.listVideoInputDevices();
-          const videoDevice = devices[0]?.deviceId; // Choose the first available device (typically the rear camera)
+          const videoDevice =
+            devices.find((device) =>
+              device.label.toLowerCase().includes("back")
+            )?.deviceId || devices[0]?.deviceId; // Fall back to the first device if no rear camera is found
 
           if (videoDevice) {
             // Start decoding from the selected video input
