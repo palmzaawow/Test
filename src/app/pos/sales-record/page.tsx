@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCollapse } from "@/app/CollapseContext";
 import clsx from "clsx";
-import { FaSearch } from "react-icons/fa";
 
 export default function Salesrecord() {
   const router = useRouter();

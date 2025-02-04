@@ -62,7 +62,6 @@ export default function POS() {
   const finalPrice = totalPrice - discountAmount;
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("");
 
   const { width, height } = useWindowSize();
 
@@ -183,7 +182,7 @@ export default function POS() {
   };
 
   const confirmPayment = (method: string) => {
-    setPaymentMethod(method);
+    // setPaymentMethod(method);
     alert(
       `✅ ขายสินค้าเรียบร้อยแล้ว! \nชำระโดย: ${method} \nรวมเป็นเงิน ${finalPrice.toLocaleString()} บาท`
     );
