@@ -99,7 +99,7 @@ export default function POS() {
       setShowScanner(true); // Show the scanner
     } catch (err) {
       setCameraPermission(false); // If permission is denied
-      alert("Please enable camera access to scan barcodes.");
+      alert(`Please enable camera access to scan barcodes. Error: ${err}`);
     }
   };
 
