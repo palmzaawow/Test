@@ -114,7 +114,7 @@ export default function POS() {
           const videoDevice =
             devices.find((device) =>
               device.label.toLowerCase().includes("back")
-            )?.deviceId || devices[0]?.deviceId; // Fall back to the first device if no rear camera is found
+            )?.deviceId || devices[1]?.deviceId; // Fall back to the first device if no rear camera is found
 
           if (videoDevice) {
             // Start decoding from the selected video input
